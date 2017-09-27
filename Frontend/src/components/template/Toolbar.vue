@@ -1,11 +1,13 @@
 <template>
-  <v-toolbar fixed>
+  <v-toolbar class="pink" fixed dark>
     <v-toolbar-title v-text="title"></v-toolbar-title>
     <v-spacer></v-spacer>
     <div>
       <v-btn flat
         v-for="(link, i) in links"
-       :key="i" :to="link.path"
+        :key="i"
+        :to="link.path"
+        exact
       >
         {{link.name}}
       </v-btn>
@@ -18,7 +20,7 @@
     name: 't-toolbar',
     data () {
       return {
-        title: 'Vue app',
+        title: 'Chat',
         links: routes
       }
     }
