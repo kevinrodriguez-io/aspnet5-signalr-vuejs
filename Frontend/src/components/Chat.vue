@@ -46,7 +46,13 @@
             <v-list-tile>
               <v-list-tile-content>
                 <v-list-tile-title>A message received</v-list-tile-title>
-                <v-list-tile-sub-title class="grey--text text--darken-4">Hello people</v-list-tile-sub-title>
+                <v-list-tile-sub-title class="grey--text">Hello people</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>A message received</v-list-tile-title>
+                <v-list-tile-sub-title class="grey--text">Hello people</v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -64,7 +70,13 @@
   </div>
 </template>
 <script>
+  import $ from 'jquery'
+  import 'ms-signalr-client-jquery-3'
   export default {
+    beforeMount () {
+      debugger
+      $.hubConnection('test')
+    },
     data () {
       return {
         welcomeVisible: true
