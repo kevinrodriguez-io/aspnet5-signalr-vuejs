@@ -1,0 +1,95 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>Frontend</Name>
+    <RootNamespace>Frontend</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ea845c09-f1da-4eb5-833d-106c443b9032</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include=".eslintrc.js" />
+    <Compile Include=".postcssrc.js" />
+    <Compile Include="app.js" />
+    <Compile Include="build\build.js" />
+    <Compile Include="build\check-versions.js" />
+    <Compile Include="build\dev-client.js" />
+    <Compile Include="build\dev-server.js" />
+    <Compile Include="build\utils.js" />
+    <Compile Include="build\vue-loader.conf.js" />
+    <Compile Include="build\webpack.base.conf.js" />
+    <Compile Include="build\webpack.dev.conf.js" />
+    <Compile Include="build\webpack.prod.conf.js" />
+    <Compile Include="build\webpack.test.conf.js" />
+    <Compile Include="config\dev.env.js" />
+    <Compile Include="config\index.js" />
+    <Compile Include="config\prod.env.js" />
+    <Compile Include="config\test.env.js" />
+    <Compile Include="src\main.js" />
+    <Compile Include="src\router\index.js" />
+    <Compile Include="test\e2e\custom-assertions\elementCount.js" />
+    <Compile Include="test\e2e\nightwatch.conf.js" />
+    <Compile Include="test\e2e\runner.js" />
+    <Compile Include="test\e2e\specs\test.js" />
+    <Compile Include="test\unit\index.js" />
+    <Compile Include="test\unit\karma.conf.js" />
+    <Compile Include="test\unit\specs\Hello.spec.js" />
+    <Content Include=".babelrc" />
+    <Content Include=".editorconfig" />
+    <Content Include=".eslintignore" />
+    <Content Include=".gitignore" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="src\App.vue" />
+    <Content Include="src\assets\logo.png" />
+    <Content Include="src\components\Chat.vue" />
+    <Content Include="src\components\Index.vue" />
+    <Content Include="src\components\template\Footer.vue" />
+    <Content Include="src\components\template\Toolbar.vue" />
+    <Content Include="src\stylus\main.styl" />
+    <Content Include="static\.gitkeep" />
+    <Content Include="static\favicon-32x32.png" />
+    <Content Include="static\v.png" />
+    <Content Include="test\unit\.eslintrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build\" />
+    <Folder Include="config\" />
+    <Folder Include="src\" />
+    <Folder Include="src\assets\" />
+    <Folder Include="src\components\" />
+    <Folder Include="src\components\template\" />
+    <Folder Include="src\router\" />
+    <Folder Include="src\stylus\" />
+    <Folder Include="static\" />
+    <Folder Include="test\" />
+    <Folder Include="test\e2e\" />
+    <Folder Include="test\e2e\custom-assertions\" />
+    <Folder Include="test\e2e\specs\" />
+    <Folder Include="test\unit\" />
+    <Folder Include="test\unit\specs\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+</Project>

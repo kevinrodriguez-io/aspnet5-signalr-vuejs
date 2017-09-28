@@ -3,12 +3,21 @@ var fs = require('fs')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var webpack = require('webpack')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery'
+    })
+  ],
   entry: {
     app: './src/main.js'
   },
