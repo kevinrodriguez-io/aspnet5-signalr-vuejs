@@ -19,5 +19,6 @@ export const routes = [
 ]
 
 export const router = new Router({
+  mode: 'history',
   routes: routes
 })
